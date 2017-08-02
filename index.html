@@ -6,10 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
   <link rel="stylesheet" href="css/master.css">
-  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">  Estilos de bootstrap-->
-  <script src="http://code.jquery.com/jquery.js"></script><!-- jquery -->
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">  Estilos de bootstrap-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <!-- bootstrap -->
+  <script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js" charset="utf-8"></script>
 </head>
 <body>
   <header>
@@ -25,9 +26,9 @@
   </header>
   <main>
     <section>
-      <article>
-        <p>Practicando HTML básico</p>
-      </article>
+      <div class="row">
+        <table id="tableGet" class="display"></table>
+      </div>
     </section>
     <aside>
 
@@ -35,7 +36,10 @@
   </main>
   <footer></footer>
 </body>
-<script src="js/JSON.js">
-
+<script src="js/JSON.js"></script>
+<script>
+  if(undefined != table && table == 'ok table'){
+    console.log('hola table');
+  }
 </script>
 </html>
