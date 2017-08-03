@@ -1,5 +1,7 @@
-body{
-  border:solid 2px blue;
-  font-size: 14px;
-  
+@import url('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css');
+@import url('https://cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css');
+
+header{
+  height: 50px;
+  display: inline-block;
 }
