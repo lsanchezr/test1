@@ -6,36 +6,70 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>DataTable</title>
   <link rel="stylesheet" href="css/master.css">
-  <link rel="stylesheet" href="https://cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js" charset="utf-8"></script>
-
-
+  <style media="screen">
+    .container{
+      
+    }
+  </style>
 </head>
 <body>
+  <!--  -->
   <header>
-    <nav>
-      <ul>
-        <li class="param"></li>
-        <li class="valida"></li>
-        <li class="mantenimiento"></li>
-      </ul>
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="collapsed navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-6" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a href="#" class="navbar-brand">SisPagos</a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-6">
+          <ul class="nav navbar-nav">
+            <li class="active"><a data-toggle="tab" href="#home">Home</a></li>
+            <li><a data-toggle="tab" href="#param">Parametría</a></li>
+            <li><a data-toggle="tab" href="#valid">Validación</a></li>
+            <li><a data-toggle="tab" href="#charts">Gráficas</a></li>
+            <li><a data-toggle="tab" href="#manto">Mantenimiento</a></li>
+          </ul>
+        </div>
+      </div>
     </nav>
   </header>
   <main>
-    <section>
+    <div class="container">
       <div class="row">
-        <table id="tableGet" class="display"></table>
+        <div class="tab-content">
+          <section class="tab-pane fade in active" id="home">
+            <h3>Home</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi adipisci eius atque, tenetur ex, dolorem nesciunt iste, modi nulla excepturi vitae neque impedit rerum obcaecati architecto in. Autem magni, id!</p>
+          </section>
+          <section class="tab-pane fade" id="param">
+            <h3>Parametría</h3>
+            <table id="tableGet" class="display"></table>
+          </section>
+          <section class="tab-pane fade" id="valid">
+            <h3>Validación</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          </section>
+          <section class="tab-pane fade" id="charts">
+            <h3>Gráficas</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          </section>
+          <section class="tab-pane fade" id="manto">
+            <h3>Mantenimiento</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          </section>
+        </div>
       </div>
-    </section>
-    <aside>
-
-    </aside>
+    </div>
   </main>
-  <footer></footer>
 </body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js" charset="utf-8"></script>
 <script src="js/JSON.js"></script>
 <script>
 
