@@ -85,8 +85,99 @@ obj = {
           'sSortDescending': ': Activar para ordenar la columna de manera descendente'
         }
       }
-    });
-    return ('ok table');
+    }),
+
+
+         editor = new $.fn.dataTable.Editor({
+            data   : this.dataSet,
+            table  : "#tableGet",
+            fields: [ {
+                    label: "ID:",
+                    name: "ID"
+                }, {
+                    label: "Desc:",
+                    name: "Desc"
+                }, {
+                    label: "Edo Act/InAct:",
+                    name: "Edo Act/InAct"
+                }, {
+                    label: "Campo a Validar:",
+                    name: "Campo a Validar"
+                }, {
+                    label: "Tabla a Validar:",
+                    name: "Tabla a Validar"
+                }, {
+                    label: "Nom. WF:",
+                    name: "Nom. WF"
+                }, {
+                    label: "Cod. WF:",
+                    name: "Cod. WF"
+                }, {
+                    label: "Criticidad:",
+                    name: "Criticidad"
+                },{
+                    label: "Codición:",
+                    name: "Codición"
+                },{
+                    label: "F. Insert Regla:",
+                    name: "F. Insert Regla",
+                    type: "datatime"
+                },{
+                    label: "F. ultima Modificación:",
+                    name: "F. ultima Modificación",
+                    type: "datatime"
+                },{
+                    label: "Usuario Ultima Modificación:",
+                    name: "Usuario Ultima Modificación"
+                },{
+                    label: "Umbral Limite:",
+                    name: "Umbral Limite"
+                }
+            ]
+        });
+
+
+        $('#tableGet').on( 'click', 'tbody td:not(:first-child)', function (e) {
+            editor.inline( this );
+        } );
+
+        $('#tableGet').DataTable({
+            dom: "Bfrtip",
+            data   : this.dataSet,
+            order: [[ 1, 'asc' ]],
+            columns: [
+                {
+                    data: null,
+                    defaultContent: '',
+                    className: 'select-checkbox',
+                    orderable: true
+                },
+                { data: "ID" },
+                { data: "Desc" },
+                { data: "Edo Act/InAct" },
+                { data: "Campo a Validar" },
+                { data: "Tabla a Validar" },
+                { data: "Nom. WF" },
+                { data: "Cod. WF" },
+                { data: "Criticidad" },
+                { data: "Codición" },
+                { data: "F. Insert Regla" },
+                { data: "F. ultima Modificación" },
+                { data: "Usuario Ultima Modificación" },
+                { data: "Umbral Limite", render: $.fn.dataTable.render.number( ',',',',',',',','.', 0, 0,',' ) }
+            ],
+            select: {
+                style:    'os',
+                selector: 'td:first-child'
+            },
+            buttons: [
+                { extend: "create", editor: editor },
+                { extend: "edit",   editor: editor },
+                { extend: "remove", editor: editor }
+            ]
+          });
+
+        return ('ok table');
+      }
     }
-  }
 var table = obj.table();
