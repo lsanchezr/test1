@@ -63,7 +63,7 @@ function graficaPromedioLocacion(){
   return arrPromedioLocacion;
 }
 
-filtroLocacion(dataSet);
+filtroLocacion(DB.dataSet);
 
 function drawChart() {
 

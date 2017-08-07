@@ -1,9 +1,9 @@
-var obj = {};
-
-obj = {
+var DB = {};
+DB = {
   nombre : 'Liliana',
   pate   : 'Sanchez',
   mate   : 'Romero',
+  pelis  : {},
   dataSet: [
     [ 'Tiger Nixon', 'System Architect', 'Edinburgh', '5421', '2011/04/25', '$320,800',' ',' ',' ',' ',' ',' ',' '],
     [ 'Garrett Winters', 'Accountant', 'Tokyo', '8422', '2011/07/25', '$170,750',' ',' ',' ',' ',' ',' ',' '],
@@ -43,6 +43,7 @@ obj = {
     [ 'Unity Butler', 'Marketing Designer', 'San Francisco', '5384', '2009/12/09', '$85,675',' ',' ',' ',' ',' ',' ',' ']
   ],
   table  : function(){
+    var table;
     // return(this.dataSet);
     $('#tableGet').DataTable({
       data   : this.dataSet,
@@ -86,7 +87,45 @@ obj = {
         }
       }
     });
-    return ('ok table');
-    }
+    var tablePost_cols = [
+      {title : 'ID'},
+      {title : 'Desc'},
+      {title : 'Edo Act/InAct'},
+      {title : 'Campo a Validar'},
+      {title : 'Tabla a Validar'},
+      {title : 'Nom. WF'},
+      {title : 'Cod. WF'},
+      {title : 'Criticidad'},
+      {title : 'Codición'},
+      {title : 'F. Insert Regla'},
+      {title : 'F. ultima Modificación'},
+      {title : 'Usuario Ultima Modificación'},
+      {title : 'Umbral Limite'}
+    ];
+    table = $('#tablePost').DataTable({
+      bPaginate : true,
+      sPaginationType: 'first_last_numbers',
+      columns   : tablePost_cols,
+      data      : this.dataSet,
+      dom       : 'Bfrtip',
+      select    : 'single',
+      altEditor : true,
+      order     : [[ 0, 'asc' ]],
+      iDisplayLength: 10,
+      buttons   : [{
+        extend  : 'selected',
+        text    : 'Editar',
+        name    : 'edit'
+      },{
+        extend  : 'selected',
+        text    : 'Borrar',
+        name    : 'delete'
+      },{
+        text    : 'Actualizar Catálogos',
+        name    : 'uploadDefinidor'
+      }],
+      bDestroy : true
+    });
   }
-var table = obj.table();
+}
+var table = DB.table();
