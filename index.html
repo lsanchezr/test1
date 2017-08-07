@@ -4,7 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>DataTable</title>
+  <link rel="shortcut icon" href="https://community.grupobbva.com/KSNI/mult/css/favicon.ico">
+  <title>SisPagos</title>
   <link rel="stylesheet" href="css/master.css">
   <style media="screen">
     .bbvaLogo{
@@ -141,19 +142,13 @@
           url:add,
           type:'GET',
           success: function(data){
-            if(undefined == objeto['data']){
-              objeto['data'] = {}
-            }objeto['data'] = data;
-            var object = JSON.stringify(objeto);
-            console.log(object);
+            DB.pelis = data;
           }
         });
-        if(undefined == objeto['hola']){
-          objeto['hola'] = {}
-        }objeto['hola'] = 'hello word';
-        // console.log(objeto);
       }
-    };
+    }
+    pelis.get();
+    console.log(DB);
   });
 </script>
 </html>
