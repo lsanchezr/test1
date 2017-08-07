@@ -103,8 +103,6 @@ DB = {
       {title : 'Umbral Limite'}
     ];
     table = $('#tablePost').DataTable({
-      bPaginate : true,
-      sPaginationType: 'first_last_numbers',
       columns   : tablePost_cols,
       data      : this.dataSet,
       dom       : 'Bfrtip',
