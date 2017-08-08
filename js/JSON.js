@@ -53,8 +53,8 @@ DB = {
         {title : 'Edo Act/InAct'},
         {title : 'Campo a Validar'},
         {title : 'Tabla a Validar'},
-        {title : 'Nom. WorkFlow'},
-        {title : 'Cod. WorkFlow'},
+        {title : 'Nom. WF'},
+        {title : 'Cod. WF'},
         {title : 'Criticidad'},
         {title : 'Codición'},
         {title : 'F. Insert Regla'},
@@ -93,8 +93,8 @@ DB = {
       {title : 'Edo Act/InAct'},
       {title : 'Campo a Validar'},
       {title : 'Tabla a Validar'},
-      {title : 'Nom. WorkFlow'},
-      {title : 'Cod. WorkFlow'},
+      {title : 'Nom. WF'},
+      {title : 'Cod. WF'},
       {title : 'Criticidad'},
       {title : 'Codición'},
       {title : 'F. Insert Regla'},
@@ -103,6 +103,8 @@ DB = {
       {title : 'Umbral Limite'}
     ];
     table = $('#tablePost').DataTable({
+      bPaginate : true,
+      sPaginationType: 'first_last_numbers',
       columns   : tablePost_cols,
       data      : this.dataSet,
       dom       : 'Bfrtip',
