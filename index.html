@@ -4,57 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>DataTable</title>
+  <title>SisPagos</title>
   <link rel="stylesheet" href="css/master.css">
-  <style media="screen">
-    .bbvaLogo{
-      fill:#005BAA;
-    }
-    .container{}
-    .navbar{
-      background: #072146;
-    }
-    .navbar-header{
-      width: 175px;
-    }
-    .navbar-header h1{
-      width: 80px; height:38px;
-      margin:7px 10px 0 0; position: relative; float: left;
-      background: url(data:image/svg+xml,%3Csvg%20width%3D%2255%22%20height%3D%2224.999999999999996%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%20%3Cmetadata%20id%3D%22metadata3440%22%3Eimage%2Fsvg%2Bxml%3C%2Fmetadata%3E%20%3Cg%20id%3D%22bbvaLogo_w%22%3E%20%3Ctitle%3EBBVA%3C%2Ftitle%3E%20%3Cg%20id%3D%22BBVA%22%3E%20%3Cpath%20fill%3D%22white%22%20id%3D%22svg_10%22%20d%3D%22m49.1%2C5.9c-0.5%2C-1.4%20-0.7%2C-1.7%20-2%2C-1.7l-3.1%2C0l-5%2C16.5l2.6%2C0l1.1%2C-3.5l6%2C0l1.1%2C3.5l4.5%2C0l-5.2%2C-14.8zm-5.8%2C8.8l2.3%2C-7.5l2.3%2C7.5l-4.6%2C0z%22%20class%3D%22bbvaLogo%22%2F%3E%20%3Cpath%20fill%3D%22white%22%20id%3D%22svg_11%22%20d%3D%22m24.1%2C10.7l0.9%2C-1.2c1.7%2C-2.5%200.5%2C-5.3%20-2.8%2C-5.3l-7.2%2C0l0%2C16.5l6.9%2C0c6.1%2C0%207.9%2C-7.1%202.2%2C-10m-5.3%2C7.8l0%2C-12.2l2.1%2C0c1%2C0%201.9%2C0.8%201.9%2C1.9c0%2C0.4%20-0.1%2C0.7%20-0.4%2C1.2l-1.4%2C2.1c1.4%2C0.3%202.4%2C1.4%202.4%2C3.5c0%2C2.5%20-1.5%2C3.5%20-3.5%2C3.5l-1.1%2C0z%22%20class%3D%22bbvaLogo%22%2F%3E%20%3Cpath%20fill%3D%22white%22%20id%3D%22svg_12%22%20d%3D%22m10.2%2C10.7l0.8%2C-1.2c1.7%2C-2.5%200.5%2C-5.3%20-2.8%2C-5.3l-7.2%2C0l0%2C16.5l6.9%2C0c6.1%2C0%207.9%2C-7.1%202.3%2C-10m-4.2%2C7.8l-1.1%2C0l0%2C-12.2l2.1%2C0c1%2C0%201.9%2C0.8%201.9%2C1.9c0%2C0.4%20-0.1%2C0.7%20-0.4%2C1.2l-1.4%2C2.1c1.4%2C0.3%202.4%2C1.4%202.4%2C3.5c0%2C2.4%20-1.5%2C3.5%20-3.5%2C3.5%22%20class%3D%22bbvaLogo%22%2F%3E%20%3Cpath%20fill%3D%22white%22%20id%3D%22svg_13%22%20d%3D%22m31.4%2C6.3c-0.6%2C-1.9%20-0.9%2C-2.1%20-2%2C-2.1l-2.9%2C0l5.4%2C16.5l4%2C0l5%2C-16.5l-2.6%2C0l-3.7%2C12.5l-3.2%2C-10.4z%22%20class%3D%22bbvaLogo%22%2F%3E%20%3C%2Fg%3E%20%3C%2Fg%3E%20%3Cg%3E%20%3Ctitle%3Ebackground%3C%2Ftitle%3E%20%3Crect%20x%3D%22-1%22%20y%3D%22-1%22%20width%3D%2257%22%20height%3D%2227%22%20id%3D%22canvas_background%22%20fill%3D%22none%22%2F%3E%20%3C%2Fg%3E%3C%2Fsvg%3E);
-      background-repeat:no-repeat;
-      background-size: contain;
-
-    }
-    .navbar-brand{
-      font-size: 16px;
-      line-height: 32px;
-      color: rgba(255, 255, 255, 0.6) !important;
-
-    }
-    .navbar-header figure{
-      display: none;
-      width: 50px;
-      height: 50px;
-      position: relative; float: left;
-      margin: 0 20px 0 0;
-    }
-    .navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover{
-      color: rgba(255, 255, 255, 0.6) !important;
-    }
-    .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover{
-      background: #237aba; color: white !important;
-    }
-    .bbvaSty1{fill:#002F87;}
-    .bbvaSty2{fill:#1E75BC;}
-    .bbvaSty3{fill:#0A9DD9;}
-    .bbvaSty4{fill:#61B4E4;}
-    .bbvaSty5{fill:#9ACAEB;}
-    .bbvaSty6{fill:#BAD8EB;}
-
-    .container{
-
-    }
-  </style>
+  <style media="screen"></style>
 </head>
 <body>
   <header>
@@ -87,7 +39,13 @@
             <li class="active"><a data-toggle="tab" href="#home">Home</a></li>
             <li><a data-toggle="tab" href="#param">Parametría</a></li>
             <li><a data-toggle="tab" href="#valid">Validación</a></li>
-            <li><a data-toggle="tab" href="#charts">Gráficas</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Gráficas <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a data-toggle="tab" href="#chartsParamDataTable">Parametría y Validación</a></li>
+                <li><a data-toggle="tab" href="#otherCharts">Otras Graficas</a></li>
+              </ul>
+            </li>
             <li><a data-toggle="tab" href="#manto">Mantenimiento</a></li>
           </ul>
         </div>
@@ -99,11 +57,12 @@
       <div class="row">
         <div class="tab-content">
           <section class="tab-pane fade in active" id="home">
-            <h2>Home SisPagos</h2>
-
+            <br></br>
+            <div class="Home"><h3>Home</h3></div>
+            <br></br>
             <p>
-              Al día de hoy el área de <b>MIS</b> es la encargada de generar los reportes regulatorios que las
-autoridades como <b>Banco de México</b> y <b>CNBV</b> requieren como materia de cooperación. Dentro del
+              Al día de hoy el área de MIS es la encargada de generar los reportes regulatorios que las
+autoridades como Banco de México y CNBV requieren como materia de cooperación. Dentro del
 grupo de reportes regulatorios que cumplen con esta función, se encuentra el grupo denominado
 SISPAGOS que hace referencia a diversos ámbitos de transaccionalidad realizada por los clientes
 del banco, utilizando medios de pago de menudeo a través de los diferentes canales.
@@ -119,55 +78,44 @@ La finalidad del proyecto a nivel dirección es:
             </p>
           </section>
           <section class="tab-pane fade" id="param">
-            <h3>Parametría</h3>
+            <br></br>
+            <div class="Param"><h3>Parametría</h3></div>
+            <br></br>
             <table id="tablePost" class="display"></table>
           </section>
           <section class="tab-pane fade" id="valid">
-            <h3>Validación</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <br></br>
+            <div class="Valid"><h3>Validación</h3></div>
+            <br></br>
             <table id="tableGet" class="display"></table>
           </section>
-          <section class="tab-pane fade" id="charts">
-            <nav class="navbar">
-              <div class="container-fluid">
-                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-6">
-                  <ul class="nav navbar-nav">
-                    <li class="active"><a data-toggle="tab" href="#paramVal">Parametría y Validación</a></li>
-                    <li><a data-toggle="tab" href="#otras">Otras Graficas</a></li>
-                  </ul>
-                </div>
-              </div>
-            </nav>
-            <div class="container">
-              <div class="row">
-                <div class="tab-content">
-                  <section class="tab-pane fade in active" id="paramVal">
-                    <h3>Parametría y Validación</h3>
-                    <br></br>
-                    <p>Número de elementos por locación</p>
-                    <div id="table_div1"></div>
-                    <br></br>
-                    <p>Promedio salarial por locación</p>
-                    <div id="table_div2"></div>
-                    <br></br>
-                    <p>Pelis</p>
-                    <div id="table_div"></div>
-                  </section>
-                  <section class="tab-pane fade" id="otras">
-                    <h3>Otras Gráficas</h3>
-                    <p>Número de elementos por locación</p>
-                    <div id="chart_div1"></div>
-                    <p>Promedio salarial por locación</p>
-                    <div id="chart_div2"></div>
-                    <p>Pelis</p>
-                    <div id="chart_div"></div>
-                  </section>
-                </div>
-              </div>
-            </div>
+          <section class="tab-pane fade" id="chartsParamDataTable">
+            <h3>Parametría y Validación</h3>
+            <br></br>
+            <p>Número de elementos por locación</p>
+            <div id="table_div1"></div>
+            <br></br>
+            <p>Promedio salarial por locación</p>
+            <div id="table_div2"></div>
+            <br></br>
+            <p>Pelis</p>
+            <div id="table_div"></div>
           </section>
+          <section class="tab-pane fade" id="otherCharts">
+            <h3>Otras Gráficas</h3>
+            <p>Número de elementos por locación</p>
+            <div id="chart_div1"></div>
+            <p>Promedio salarial por locación</p>
+            <div id="chart_div2"></div>
+            <p>Pelis</p>
+            <div id="chart_div"></div>
+          </section>
+
+
           <section class="tab-pane fade" id="manto">
-            <h3>Mantenimiento</h3>
+            <br></br>
+            <div class="Manto"><h3>Mantenimiento</h3></div>
+            <br></br>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
           </section>
         </div>
