@@ -1,5 +1,95 @@
 var dataFiltro = [];
 
+var lenguaje = {
+  'sProcessing'    :  'Procesando...',
+  'sLengthMenu'    :  'Mostrar _MENU_ registros',
+  'sZeroRecords'   :  'No se encontraron resultados',
+  'sEmptyTable'    :  'Ningún dato disponible en esta tabla',
+  'sInfo'          :  'Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros',
+  'sInfoEmpty'     :  'Mostrando registros del 0 al 0 de un total de 0 registros',
+  'sInfoFiltered'  :  '(filtrado de un total de _MAX_ registros)',
+  'sInfoPostFix'   :  '',
+  'sSearch'        :  'Buscar:',
+  'sUrl'           :  '',
+  'sInfoThousands' :  ',',
+  'sLoadingRecords':  'Cargando...',
+  'oPaginate'      :  {
+                        'sFirst'     :  'Primero',
+                        'sLast'      :  'Último',
+                        'sNext'      :  'Siguiente',
+                        'sPrevious'  :  'Anterior'
+                      }
+  };
+
+var cols = [
+  {title : 'Title',width: '350px'},
+  {title : 'Type'},
+  {title : 'Year'},
+  {title : 'imdbID'},
+  {title : 'Poster'}
+];
+
+var table = $('#table_div').DataTable({
+  bPaginate : false,
+  sPaginationType: 'first_last_numbers',
+  columns   : cols,
+  data      : [],
+  dom       : 'Bfrtip',
+  select    : 'single',
+  altEditor : true,
+  order     : [[ 0, 'asc' ]],
+  iDisplayLength: 10,
+  buttons   : [],
+  bDestroy  : true,
+  bAutoWidth: false,
+  searching : false,
+  language : lenguaje
+});
+
+var cols1 = [
+  {title : 'Locación',width: '350px'},
+  {title : 'Valor'}
+];
+
+var table1 = $('#table_div1').DataTable({
+  bPaginate : false,
+  sPaginationType: 'first_last_numbers',
+  columns   : cols1,
+  data      : [],
+  dom       : 'Bfrtip',
+  select    : 'single',
+  altEditor : true,
+  order     : [[ 0, 'asc' ]],
+  iDisplayLength: 10,
+  buttons   : [],
+  bDestroy  : true,
+  bAutoWidth: false,
+  searching : false,
+  language : lenguaje
+});
+
+var cols2 = [
+  {title : 'Locación',width: '350px'},
+  {title : 'Promedio'}
+];
+
+var table2 = $('#table_div2').DataTable({
+  bPaginate : false,
+  sPaginationType: 'first_last_numbers',
+  columns   : cols2,
+  data      : [],
+  dom       : 'Bfrtip',
+  select    : 'single',
+  altEditor : true,
+  order     : [[ 0, 'asc' ]],
+  iDisplayLength: 10,
+  buttons   : [],
+  bDestroy  : true,
+  bAutoWidth: false,
+  searching : false,
+  language : lenguaje
+});
+
 google.charts.load('current', {'packages':['corechart','table']});
 google.charts.setOnLoadCallback(drawChart);
 
@@ -47,6 +137,14 @@ function graficaPromedioLocacion(){
   return arrPromedioLocacion;
 }
 
+function graficaPelis(){
+  var arrPelis = [];
+  for(var i=0; i<DB.pelis.data.length;i++){
+    arrPelis[i] = [DB.pelis.data[i].Title,DB.pelis.data[i].Year];
+  }
+  return arrPelis;
+}
+
 filtroLocacion(DB.dataSet);
 
 function drawChart() {
@@ -54,51 +152,35 @@ function drawChart() {
   var dataPelisGrafica = new google.visualization.DataTable();
   dataPelisGrafica.addColumn('string', 'Title');
   dataPelisGrafica.addColumn('number', 'Year');
+  dataPelisGrafica.addRows(graficaPelis());
 
   for(var i=0; i<DB.pelis.data.length;i++){
-     dataPelisGrafica.addRow([DB.pelis.data[i].Title,DB.pelis.data[i].Year]);
-  }
-
-  var dataPelis = new google.visualization.DataTable();
-  dataPelis.addColumn('string', 'Poster');
-  dataPelis.addColumn('string', 'Title');
-  dataPelis.addColumn('string', 'Type');
-  dataPelis.addColumn('string', 'Year');
-  dataPelis.addColumn('string', 'imdbID');
-
-  for(var i=0; i<DB.pelis.data.length;i++){
-    dataPelis.addRow([DB.pelis.data[i].Poster,DB.pelis.data[i].Title,DB.pelis.data[i].Type,DB.pelis.data[i].Year+"",DB.pelis.data[i].imdbID]);
+     table.row.add([DB.pelis.data[i].Title,DB.pelis.data[i].Type,DB.pelis.data[i].Year+"",DB.pelis.data[i].imdbID,'<div style="width:530px;overflow:hidden;" title="'+DB.pelis.data[i].Poster+'">'+DB.pelis.data[i].Poster+'</div>']).draw( false );
   }
 
   var data1 = new google.visualization.DataTable();
   data1.addColumn('string', 'Locación');
   data1.addColumn('number', 'Valor');
   data1.addRows(graficaElementosLocacion());
+  table1.rows.add(graficaElementosLocacion()).draw(false);
 
   var data2 = new google.visualization.DataTable();
   data2.addColumn('string', 'Locación');
   data2.addColumn('number', 'Promedio');
   data2.addRows(graficaPromedioLocacion());
+  table2.rows.add(graficaPromedioLocacion()).draw(false);
 
   var options = {
     'width' :400,
     'height':300
   };
 
-  var table = new google.visualization.Table(document.getElementById('table_div'));
   var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
-
   var chart1 = new google.visualization.PieChart(document.getElementById('chart_div1'));
   var chart2 = new google.visualization.PieChart(document.getElementById('chart_div2'));
 
-  var table1 = new google.visualization.Table(document.getElementById('table_div1'));
-  var table2 = new google.visualization.Table(document.getElementById('table_div2'));
-
-  table.draw(dataPelis,{showRowNumber: true, width: '100%', height: '100%'});
   chart.draw(dataPelisGrafica, options);
-
-  table1.draw(data1,{showRowNumber: true, width: '100%', height: '100%'});
   chart1.draw(data1, options);
-  table2.draw(data1,{showRowNumber: true, width: '100%', height: '100%'});
   chart2.draw(data2, options);
+
 }
