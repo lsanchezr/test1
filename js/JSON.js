@@ -4,6 +4,40 @@ DB = {
   pate   : 'Sanchez',
   mate   : 'Romero',
   pelis  : {},
+  who    : {
+    sspgs: {
+      0{
+        "name":"Joselyn Alexandra Ruiz Angeles",
+        "id":"1",
+        "mail":"joselynalexandra.ruiz.contractor@bbva.com",
+        "edit":"SI"
+      },
+      1:{
+        "name":"Manuel Sanchez Pau",
+        "id":"2",
+        "mail":"manuel.sanchez.pau.contractor@bbva.com",
+        "edit":"SI"
+      },
+      2:{
+        "name":"Norberto Lodela",
+        "id":"3",
+        "mail":"norberto.lopezdelara.contractor@bbva.com",
+        "edit":"SI"
+      }
+      3:{
+        "name":"Liliana Hernandez",
+        "id":"4",
+        "mail":"lilisanrom@gmail.com",
+        "edit":"SI"
+      }
+      4:{
+        "name":"Leonardo Vargas",
+        "id":"5",
+        "mail":"leonet4@gmail.com",
+        "edit":"SI"
+      }
+    }
+  },
   dataSet: [
     [ 'Tiger Nixon', 'System Architect', 'Edinburgh', '5421', '2011/04/25', '$320,800',' ',' ',' ',' ',' ',' ',' '],
     [ 'Garrett Winters', 'Accountant', 'Tokyo', '8422', '2011/07/25', '$170,750',' ',' ',' ',' ',' ',' ',' '],
@@ -53,8 +87,8 @@ DB = {
         {title : 'Edo Act/InAct'},
         {title : 'Campo a Validar'},
         {title : 'Tabla a Validar'},
-        {title : 'Nom. WF'},
-        {title : 'Cod. WF'},
+        {title : 'Nom. WrkFlw'},
+        {title : 'Cod. WrkFlw'},
         {title : 'Criticidad'},
         {title : 'Codición'},
         {title : 'F. Insert Regla'},
@@ -93,8 +127,8 @@ DB = {
       {title : 'Edo Act/InAct'},
       {title : 'Campo a Validar'},
       {title : 'Tabla a Validar'},
-      {title : 'Nom. WF'},
-      {title : 'Cod. WF'},
+      {title : 'Nom. WrkFlw'},
+      {title : 'Cod. WrkFlw'},
       {title : 'Criticidad'},
       {title : 'Codición'},
       {title : 'F. Insert Regla'},
@@ -120,9 +154,6 @@ DB = {
         extend  : 'selected',
         text    : 'Borrar',
         name    : 'delete'
-      },{
-        text    : 'Actualizar Catálogos',
-        name    : 'uploadDefinidor'
       }],
       bDestroy : true
     });
