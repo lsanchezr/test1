@@ -1452,7 +1452,7 @@ DB = {
   },
   who    : {
     sspgs: {
-      0{
+      0:{
         "name":"Joselyn Alexandra Ruiz Angeles",
         "id":"1",
         "mail":"joselynalexandra.ruiz.contractor@bbva.com",
@@ -1469,13 +1469,13 @@ DB = {
         "id":"3",
         "mail":"norberto.lopezdelara.contractor@bbva.com",
         "edit":"SI"
-      }
+      },
       3:{
         "name":"Liliana Hernandez",
         "id":"4",
         "mail":"lilisanrom@gmail.com",
         "edit":"SI"
-      }
+      },
       4:{
         "name":"Leonardo Vargas",
         "id":"5",
