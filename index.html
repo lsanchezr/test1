@@ -124,7 +124,10 @@ La finalidad del proyecto a nivel dirección es:
             <br></br>
             <div class="Manto"><h3>Mantenimiento</h3></div>
             <br></br>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <input type="text" id="datepicker" style="width:80px;">
+            <input type="button" id="btnBuscar" value="Buscar" onclick="js_buscar();"/>
+            <input type="button" id="btnLimpiar" value="Limpiar" onclick="js_limpiar();" />
+            <table id="table_manto" class="display"></table>
           </section>
         </div>
       </div>
@@ -137,9 +140,11 @@ La finalidad del proyecto a nivel dirección es:
 <script src="https://cdn.datatables.net/buttons/1.3.1/js/dataTables.buttons.min.js"></script>
 <script src="https://cdn.datatables.net/select/1.2.2/js/dataTables.select.min.js"></script>
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script src="js/tableEditor.js"></script>
 <script src="js/JSON.js"></script>
 <script src="js/grafica.js"></script>
+<script src="js/manto.js"></script>
 <script>
   $(function(){
     var pelis = {
